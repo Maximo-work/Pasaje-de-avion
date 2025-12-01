@@ -25,3 +25,8 @@ class Vuelo:
       return f"Codigo: {self.codigo}, Origen: {self.origen}, Destino: {self.destino}"
 
 
+
+  def mostrar_vuelo(self):
+      return f"Codigo: {self.codigo}, Origen: {self.origen}, Destino: {self.destino}"
+
+
