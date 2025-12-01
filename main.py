@@ -5,7 +5,7 @@ from reserva_pasajes import Reserva_Pasajes
 from vuelo_binario import ArbolBinarioVuelos
 from vuelo_general import VueloGeneral
 from vuelo_general import HistorialVuelos
-import Pasajero_heap
+
 
 
 #implementación:
@@ -159,26 +159,7 @@ if __name__ == "__main__":
 
 
 
-# 1. Definimos las prioridades (1 es la más alta)
-P_MOV_REDUCIDA = 2
-P_MENOR_SOLO = 1
-P_EMBARAZADA = 4
-P_NINOS = 3
 
-# 2. Creamos un vuelo de ejemplo
-vuelo_madrid = Vuelo_heap(codigo="IB312", origen="BCN", destino="MAD", prioridad_vuelo=5)
-
-# 3. Agregamos los pasajeros en CUALQUIER orden de llegada
-vuelo_madrid.agregar_pasajero_prioridad(Pasajero_heap("Maria (Niños)", P_NINOS))
-vuelo_madrid.agregar_pasajero_prioridad(Pasajero_heap("Ana (Emb.)", P_EMBARAZADA))
-vuelo_madrid.agregar_pasajero_prioridad(Pasajero_heap("Carlos (Mov. Red.)", P_MOV_REDUCIDA))
-vuelo_madrid.agregar_pasajero_prioridad(Pasajero_heap("David (Menor Solo)", P_MENOR_SOLO))
-vuelo_madrid.agregar_pasajero_prioridad(Pasajero_heap("Elena (Niños)", P_NINOS))
-
-print("-" * 20)
-
-# 4. Cuando llamas al siguiente pasajero, salen por orden de prioridad (1, 2, 3, 4, 4)
-print(vuelo_madrid.llamar_siguiente_pasajero()) # Sale Carlos (Prio 1)
 print(vuelo_madrid.llamar_siguiente_pasajero()) # Sale David (Prio 2)
 print(vuelo_madrid.llamar_siguiente_pasajero()) # Sale Ana (Prio 3)
 print(vuelo_madrid.llamar_siguiente_pasajero()) # Sale Maria (Prio 4)
